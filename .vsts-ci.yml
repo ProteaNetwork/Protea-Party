@@ -1,0 +1,12 @@
+queue: Hosted Linux Preview
+variables:
+  buildConfiguration: 'Release'
+  dockerId: protea  # change this to match your Docker Id
+
+- script: |
+    docker-compose --version
+    docker-compose pull
+    docker-compose build
+    docker-compose up -d
+    docker ps
+    docker-compose down
